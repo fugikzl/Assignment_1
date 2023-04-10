@@ -1,19 +1,19 @@
 package main
 import "fmt"
-import "os"
 
-func main() {
-	var inp string
-	fmt.Scan(&inp)
+func checkForSymbol(inp string) string{
 	l := len(inp)
 	for i:=0; i < l; i++{
 		j:=int(inp[i])
 		if( j < 48 || j > 57 ){
-			fmt.Println("NO")
-			os.Exit(0)
+			return "NO"
 		}
 	}
-	fmt.Println("YES")
-	os.Exit(0)
+	return "YES"
+}
 
+func main() {
+	var inp string
+	fmt.Scan(&inp)
+	fmt.Println(checkForSymbol(inp))
 }

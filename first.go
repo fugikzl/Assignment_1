@@ -5,7 +5,6 @@ func min(arr []int, n int) int{
 	if(n==1){
 		return arr[0]
 	}
-
 	m := min(arr, n-1)
 
 	if(m < arr[n-1]){
