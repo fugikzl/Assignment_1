@@ -1,14 +1,18 @@
 package main
 import "fmt"
 
-func findMin(arr []int, l int) int {
-	min := arr[0]
-	for i := 0; i < l; i++{
-		if arr[i] < min {
-			min = arr[i]
-		}
+func min(arr []int, n int) int{
+	if(n==1){
+		return arr[0]
 	}
-	return min
+
+	m := min(arr, n-1)
+
+	if(m < arr[n-1]){
+		return m
+	}else{
+		return arr[n-1]
+	}
 }
 
 func main() {
@@ -18,6 +22,6 @@ func main() {
 	for i := 0; i < l; i++ {
 		fmt.Scan(&arr[i])
 	}
-	min := findMin(arr, l)
+	min := min(arr, l)
 	fmt.Println(min)
 }
